@@ -1,0 +1,3353 @@
+###########################
+# Ottoman Focus Tree
+# By Silverscorpion
+###########################
+focus_tree = {
+	id = ottoman_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = OTT
+		}
+	}
+
+	default = no
+
+
+	continuous_focus_position = { x = 50 y = 2250 }
+	
+	##### SADRAZAM PATH PART 1
+
+	focus = {
+		id = OTT_A_New_Sadrazam 
+		icon = GFX_goal_Sadrazam_Coat
+		x = 12
+		y = 0
+		cost = 0
+		ai_will_do = {
+			factor = 500
+		}
+		
+			available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Sadrazam
+				has_country_flag = OTT_Sadrazam_ded
+			}
+		}		
+			bypass = {
+			has_country_flag = OTT_Sadrazam_ded
+		}
+
+		completion_reward = {
+		}
+	}
+
+	### Mustafa Kemal 
+	
+	focus = {
+		id = OTT_Mustafa_Kemal
+		prerequisite = {
+			focus = OTT_A_New_Sadrazam 
+		}
+		icon = GFX_goal_mustafa_kemal
+		x = 3
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Kemal_Sadrazam1
+				has_country_flag = OTT_Kemal_Sadrazam
+			}
+		}
+		
+					bypass = {
+			has_country_flag = OTT_Kemal_Sadrazam
+		}
+
+
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = {
+		id = OTT_Popular_Soverignty
+		prerequisite = {
+			focus = OTT_Mustafa_Kemal 
+		}
+		icon = GFX_goal_tripartite_pact
+		x = 1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.05 }
+		}
+	}
+	
+	focus = {
+		id = OTT_Land_Reform
+		prerequisite = {
+			focus = OTT_Mustafa_Kemal 
+		}
+		icon = GFX_goal_agriculture
+		x = 3
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = OTT_Language_Reform
+		prerequisite = {
+			focus = OTT_Mustafa_Kemal 
+		}
+		icon = GFX_goal_brain
+		x = 5
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = OTT_More_Executive_Power
+		prerequisite = {
+			focus = OTT_Land_Reform 
+		}
+		icon = GFX_goal_authoritarian
+		x = 2
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.05
+		}
+	}
+	
+	focus = {
+		id = OTT_Nationalize_Industries 
+		prerequisite = {
+			focus = OTT_Land_Reform 
+		}
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 4
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+
+		}
+	}
+	
+		focus = {
+		id = OTT_Expand_The_Univiversity_Sytem
+		prerequisite = {
+			focus = OTT_Language_Reform 
+		}
+		icon = GFX_focus_research2
+		x = 5
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+		focus = {
+		id = OTT_Encourage_Womans_Suffrage 
+		prerequisite = {
+			focus = OTT_Popular_Soverignty 
+		}
+		icon = GFX_goal_women_industry
+		x = 1
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = -50
+		}
+	}
+	
+		focus = {
+		id = OTT_Further_Reforms_Kemal
+		prerequisite = {
+			focus = OTT_More_Executive_Power
+		}
+		prerequisite = {
+			focus = OTT_Nationalize_Industries
+		}
+		prerequisite = {
+			focus = OTT_Encourage_Womans_Suffrage
+		}
+		prerequisite = {
+			focus = OTT_Expand_The_Univiversity_Sytem
+		}
+		icon = GFX_GRE_tur_cooperation
+		x = 3
+		y = 5
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	### Kazim Karabekir 
+	
+		focus = {
+		id = OTT_Kazim_Karabekir
+		prerequisite = {
+			focus = OTT_A_New_Sadrazam 
+		}
+		icon = GFX_goal_Kazim_Karabekir
+		x = 9
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Karabekir_Sadrazam1
+				has_country_flag = OTT_Karabekir_Sadrazam
+			}
+		}
+		
+					bypass = {
+			has_country_flag = OTT_Karabekir_Sadrazam
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+		focus = {
+		id = OTT_Encourage_Forign_Investment
+		prerequisite = {
+			focus = OTT_Kazim_Karabekir 
+		}
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 7
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+		}
+	}
+	
+			focus = {
+		id = OTT_Cut_government_regulations
+		prerequisite = {
+			focus = OTT_Kazim_Karabekir 
+		}
+		icon = GFX_goal_new_treaty
+		x = 11
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.04
+			add_political_power = -25
+		}
+	}
+
+			focus = {
+		id = OTT_incorporate_local_languages
+		prerequisite = {
+			focus = OTT_Kazim_Karabekir 
+		}
+		icon = GFX_goal_generic_propaganda
+		x = 9
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.01
+			add_political_power = 25
+		}
+	}	
+	
+			focus = {
+		id = OTT_Crush_Labor_Unions
+		prerequisite = {
+			focus = OTT_incorporate_local_languages 
+		}
+		icon = GFX_HOL_red_scare_result
+		x = 8
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_political_power = -15
+		}
+	}
+	
+			focus = {
+		id = OTT_Drug_Crackdowns
+		prerequisite = {
+			focus = OTT_incorporate_local_languages 
+		}
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_stability = 0.01
+			add_political_power = 25
+		}
+	}
+	
+			focus = {
+		id = OTT_Encourage_Muslim_Unity
+		prerequisite = {
+			focus = OTT_Encourage_Forign_Investment 
+		}
+		icon = GFX_goal_generic_national_unity
+		x = 7
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 15
+		}
+	}
+	
+				focus = {
+		id = OTT_Decentralize_Power
+		prerequisite = {
+			focus = OTT_Cut_government_regulations 
+		}
+		icon = GFX_goal_generic_support_democracy
+		x = 11
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 100
+		}
+	}
+	
+			focus = {
+		id = OTT_Further_Reforms_Karabekir
+		prerequisite = {
+			focus = OTT_Decentralize_Power
+		}
+		prerequisite = {
+			focus = OTT_Encourage_Muslim_Unity
+		}
+		prerequisite = {
+			focus = OTT_Drug_Crackdowns
+		}
+		prerequisite = {
+			focus = OTT_Crush_Labor_Unions
+		}
+		icon = GFX_GRE_tur_cooperation
+		x = 9
+		y = 5
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	
+	#### Sultanzade Sabahaddin 
+	
+			focus = {
+		id = OTT_Sultanzade_Sabahaddin 
+		prerequisite = {
+			focus = OTT_A_New_Sadrazam 
+		}
+		icon = GFX_goal_ottoman_man
+		x = 15
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Sabahaddin_Sadrazam1
+				has_country_flag = OTT_Sabahaddin_Sadrazam
+			}
+		}
+		
+					bypass = {
+			has_country_flag = OTT_Sabahaddin_Sadrazam
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = OTT_Reconcile_with_trade_unions
+		prerequisite = {
+			focus = OTT_Sultanzade_Sabahaddin 
+		}
+		icon = GFX_goal_ideology_social_democrat
+		x = 15
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = -0.03
+			add_political_power = 25
+			add_war_support = 0.05
+		}
+	}
+
+		focus = {
+		id = OTT_Encourage_entrepreneurship
+		prerequisite = {
+			focus = OTT_Reconcile_with_trade_unions 
+		}
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 14
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_political_power = 15
+		}
+	}
+	
+			focus = {
+		id = OTT_Abolish_cooporate_Monopolies
+		prerequisite = {
+			focus = OTT_Reconcile_with_trade_unions 
+		}
+		icon = GFX_focus_rom_parties_end
+		x = 16
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_political_power = -15
+			add_stability = 0.05
+		}
+	}
+	
+		focus = {
+		id = OTT_addopt_social_science
+		prerequisite = {
+			focus = OTT_Sultanzade_Sabahaddin 
+		}
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 17
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+			focus = {
+		id = OTT_encourage_ottomanism
+		prerequisite = {
+			focus = OTT_Sultanzade_Sabahaddin 
+		}
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 13
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+		add_war_support = 0.05
+		add_stability = 0.05
+		add_political_power = 25
+		}
+	}
+	
+			focus = {
+		id = OTT_encourage_federalism
+		prerequisite = {
+			focus = OTT_encourage_ottomanism 
+		}
+		icon = GFX_goal_anschluss
+		x = 13
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+		add_war_support = 0.05
+		add_stability = 0.05
+		}
+	}
+	
+			focus = {
+		id = OTT_abolish_Millet_System
+		prerequisite = {
+			focus = OTT_addopt_social_science 
+		}
+		icon = GFX_goal_generic_forceful_treaty
+		x = 17
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+		}
+	}
+	
+		focus = {
+		id = OTT_Further_Reforms_Sabahaddin
+		prerequisite = {
+			focus = OTT_abolish_Millet_System
+		}
+		prerequisite = {
+			focus = OTT_encourage_federalism
+		}
+		prerequisite = {
+			focus = OTT_Abolish_cooporate_Monopolies
+		}
+		prerequisite = {
+			focus = OTT_Encourage_entrepreneurship
+		}
+		icon = GFX_GRE_tur_cooperation
+		x = 15
+		y = 5
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	
+	### Ahmed Nihad IV 
+	
+		focus = {
+		id = OTT_Ahmed_IVs_Coup
+		prerequisite = {
+			focus = OTT_A_New_Sadrazam 
+		}
+		icon = GFX_goal_Ahmed_Nihad
+		x = 21
+		y = 1
+		cost = 0
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		OTT = { has_government = paternal_autocrat }
+		}
+
+
+		completion_reward = {
+
+		}
+	}
+	
+		focus = {
+		id = OTT_Become_Sultan
+		prerequisite = {
+			focus = OTT_Ahmed_IVs_Coup
+		}
+		icon = GFX_goal_OTT_ferman
+		x = 21
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		}
+
+
+		completion_reward = {
+			country_event = {
+				id = ott.85 days = 0
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_Curtail_The_Consitution
+		prerequisite = {
+			focus = OTT_Ahmed_IVs_Coup
+		}
+		icon = GFX_goal_skull_treaty
+		x = 19
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		}
+
+
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 150
+			add_popularity = { ideology = paternal_autocrat popularity = 0.1 }
+		}
+	}
+	
+			focus = {
+		id = OTT_Nationalize_industries
+		prerequisite = {
+			focus = OTT_Curtail_The_Consitution
+		}
+		icon = GFX_goal_forced_con
+		x = 19
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+
+		}
+	}
+	
+			focus = {
+		id = OTT_Promote_Pan_Islamism
+		prerequisite = {
+			focus = OTT_Become_Sultan
+		}
+		icon = GFX_goal_generic_improve_relations
+		x = 20
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+		add_stability = 0.05
+		add_political_power = 25
+		}
+	}
+	
+		focus = {
+		id = OTT_Declare_Sharia_Law
+		prerequisite = {
+			focus = OTT_Become_Sultan
+		}
+		icon = GFX_goal_islamic_government
+		x = 22
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+		add_war_support = 0.05
+		add_political_power = 25
+		add_popularity = { ideology = paternal_autocrat popularity = 0.1 }
+		}
+	}
+	
+	focus = {
+		id = OTT_Ban_the_CUP
+		prerequisite = {
+			focus = OTT_Ahmed_IVs_Coup
+		}
+		icon = GFX_goal_broken_red_star
+		x = 23
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		}
+
+
+		completion_reward = {
+		add_stability = -0.1
+		add_popularity = { ideology = authoritarian_democrat popularity = -0.15 }
+		add_popularity = { ideology = social_liberal popularity = -0.10 }
+		add_political_power = 100
+		}
+	}
+	
+		focus = {
+		id = OTT_Refurbish_the_Topkaki
+		prerequisite = {
+			focus = OTT_Ban_the_CUP
+		}
+		icon = GFX_goal_WIP
+		x = 23
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+
+		completion_reward = {
+		add_popularity = { ideology = paternal_autocrat popularity = 0.03 }
+		add_political_power = 50
+		add_stability = 0.03
+		}
+	}
+	
+		focus = {
+		id = OTT_Further_Reforms_Ahmed
+		prerequisite = {
+			focus = OTT_Refurbish_the_Topkaki
+		}
+		prerequisite = {
+			focus = OTT_Declare_Sharia_Law
+		}
+		prerequisite = {
+			focus = OTT_Promote_Pan_Islamism
+		}
+		prerequisite = {
+			focus = OTT_Nationalize_industries
+		}
+		icon = GFX_GRE_tur_cooperation
+		x = 21
+		y = 5
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+
+		}
+
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	
+	### SADRAZAM PART 2
+	
+				focus = {
+		id = OTT_A_New_Empire
+		prerequisite = { focus = OTT_The_Investigation }
+		icon = GFX_goal_ideology_social_liberal
+		x = 6
+		y = 10
+		cost = 3
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		OR {
+		OTT = { has_government = authoritarian_democrat }
+		OTT = { has_government = social_liberal }
+		OTT = { has_government = paternal_autocrat }
+		}
+		}
+
+
+		completion_reward = {
+
+		}
+	}
+	
+				focus = {
+		id = OTT_Return_Of_The_Old
+		prerequisite = { focus = OTT_The_Investigation }
+		icon = GFX_goal_ideology_paternal_autocrat
+		x = 18
+		y = 10
+		cost = 3
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		OR {
+		OTT = { has_government = authoritarian_democrat }
+		OTT = { has_government = paternal_autocrat }
+		}
+		}
+
+
+		completion_reward = {
+
+		}
+	}
+
+					focus = {
+		id = OTT_Rewrite_The_Consitution
+		prerequisite = { focus = OTT_Further_Reforms_Ahmed focus = OTT_Further_Reforms_Kemal focus = OTT_Further_Reforms_Karabekir focus = OTT_Further_Reforms_Sabahaddin }
+		icon = GFX_goal_OTT_constitution
+		x = 12
+		y = 6
+		cost = 3
+		ai_will_do = {
+			factor = 600
+		}
+		available = {
+		}
+		
+		select_effect = {
+			country_event = {
+				id = ott.95 days = 10
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_Rewrite_The_Consitution"
+			custom_effect_tooltip = OTT_constitution_tt
+			show_ideas_tooltip = ott_solid_constitution
+		}
+	}
+	
+						focus = {
+		id = OTT_Going_After_The_Snake
+		prerequisite = { focus = OTT_Rewrite_The_Consitution }
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		x = 12
+		y = 7
+		cost = 5
+		ai_will_do = {
+			factor = 600
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+							focus = {
+		id = OTT_Quickly_Remove_Corruption
+		prerequisite = { focus = OTT_Going_After_The_Snake }
+		icon = GFX_goal_broken_red_star 
+		x = 10
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 600
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+							focus = {
+		id = OTT_Slowly_Remove_Corruption
+		prerequisite = { focus = OTT_Going_After_The_Snake }
+		icon = GFX_goal_skull_treaty
+		x = 14
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 600
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}	
+	
+		focus = {
+		id = OTT_The_Investigation
+		prerequisite = { focus = OTT_Slowly_Remove_Corruption focus = OTT_Quickly_Remove_Corruption }
+		icon = GFX_goal_shadow_government
+		x = 12
+		y = 9
+		cost = 20
+		ai_will_do = {
+			factor = 600
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	### A New Empire Path 
+	
+			focus = {
+		id = OTT_Free_Press
+		prerequisite = { focus = OTT_A_New_Empire }
+		icon = GFX_goal_big_news
+		x = 3
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_Freedom_of_speech
+		prerequisite = { focus = OTT_A_New_Empire }
+		icon = GFX_goal_support_democracy
+		x = 6
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_Ethnic_Unity
+		prerequisite = { focus = OTT_A_New_Empire }
+		icon = GFX_goal_generic_national_unity
+		x = 9
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_Decentralize_Nation
+		prerequisite = { focus = OTT_Ethnic_Unity focus = OTT_Freedom_of_speech }
+		icon = GFX_goal_government_icon
+		x = 7
+		y = 12
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_Constitutional_Ties
+		prerequisite = { focus = OTT_Free_Press focus = OTT_Freedom_of_speech }
+		icon = GFX_goal_OTT_Sword_of_Osman
+		x = 5
+		y = 12
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+							focus = {
+		id = OTT_Religious_Dialouge
+		prerequisite = { focus = OTT_Ethnic_Unity }
+		prerequisite = { focus = OTT_Decentralize_Nation }
+		icon = GFX_goal_islamic_government
+		x = 9
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+								focus = {
+		id = OTT_Standardize_Passports
+		prerequisite = { focus = OTT_Free_Press }
+		prerequisite = { focus = OTT_Constitutional_Ties }
+		icon = GFX_goal_NOR_passport_convention
+		x = 3
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+		
+						focus = {
+		id = OTT_Encourage_Voting
+		prerequisite = { focus = OTT_Freedom_of_speech }
+		prerequisite = { focus = OTT_Constitutional_Ties }
+		prerequisite = { focus = OTT_Decentralize_Nation }
+		icon = GFX_goal_generic_elections
+		x = 6
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_Workers_Rights
+		prerequisite = { focus = OTT_Standardize_Passports focus = OTT_Encourage_Voting }
+		icon = GFX_goal_socialist_infrastructure
+		x = 5
+		y = 14
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_Equal_rights_for_voters
+		prerequisite = { focus = OTT_Religious_Dialouge focus = OTT_Encourage_Voting }
+		icon = GFX_goal_tripartite_pact
+		x = 7
+		y = 14
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_A_Liberal_Empire
+		prerequisite = { focus = OTT_Workers_Rights }
+		prerequisite = { focus = OTT_Equal_rights_for_voters }
+		prerequisite = { focus = OTT_Encourage_Voting }
+		icon = GFX_goal_OTT_coat_of_arms
+		x = 6
+		y = 15
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	### Return of the Old Path
+	
+				focus = {
+		id = OTT_restrict_democratic_parties
+		prerequisite = { focus = OTT_Return_Of_The_Old }
+		icon = GFX_goal_generic_war_with_comintern
+		x = 15
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_reform_parliament
+		prerequisite = { focus = OTT_Return_Of_The_Old }
+		icon = GFX_goal_government_icon
+		x = 18
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_expand_traditionalist_ideas
+		prerequisite = { focus = OTT_Return_Of_The_Old }
+		icon = GFX_goal_islamic_government
+		x = 21
+		y = 11
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_prohibit_syndicalism
+		prerequisite = { focus = OTT_restrict_democratic_parties focus = OTT_reform_parliament }
+		icon = GFX_HOL_red_scare
+		x = 17
+		y = 12
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_cut_extremist_elements
+		prerequisite = { focus = OTT_expand_traditionalist_ideas focus = OTT_reform_parliament }
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 19
+		y = 12
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_remove_corrupt_officals
+		prerequisite = { focus = OTT_cut_extremist_elements }
+		prerequisite = { focus = OTT_prohibit_syndicalism }
+		prerequisite = { focus = OTT_reform_parliament }
+		icon = GFX_goal_backstab
+		x = 18
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_enforce_the_rule_of_law
+		prerequisite = { focus = OTT_cut_extremist_elements }
+		prerequisite = { focus = OTT_expand_traditionalist_ideas }
+		icon = GFX_goal_generic_national_unity
+		x = 21
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_loyal_officer_core
+		prerequisite = { focus = OTT_restrict_democratic_parties }
+		prerequisite = { focus = OTT_prohibit_syndicalism }
+		icon = GFX_focus_generic_military_mission
+		x = 15
+		y = 13
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_remove_disloyal_governors
+		prerequisite = { focus = OTT_loyal_officer_core focus = OTT_remove_corrupt_officals }
+		icon = GFX_goal_generic_forceful_treaty
+		x = 17
+		y = 14
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_strengthen_buracracy 
+		prerequisite = { focus = OTT_enforce_the_rule_of_law focus = OTT_remove_corrupt_officals }
+		icon = GFX_goal_Centralised_Government
+		x = 19
+		y = 14
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+							focus = {
+		id = OTT_Stronger_Empire
+		prerequisite = { focus = OTT_remove_disloyal_governors }
+		prerequisite = { focus = OTT_strengthen_buracracy }
+		prerequisite = { focus = OTT_remove_corrupt_officals }
+		icon = GFX_goal_OTT_coat_of_arms
+		x = 18
+		y = 15
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	#### Economic/Industrial Tree path
+	
+		focus = {
+		id = OTT_Black_Monday_Hits_The_Empire
+		icon = GFX_goal_bankruptcy
+		x = 28
+		y = 0
+		cost = 0
+		ai_will_do = {
+			factor = 350
+		}
+				available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Black_Monday
+				has_country_flag = OTT_Black_Monday_Hit
+			}
+		}		
+					bypass = {
+					has_country_flag = OTT_Black_Monday_Hit
+		}
+
+		completion_reward = {
+		}
+	}
+	
+			focus = {
+		id = OTT_Dealing_With_The_Crisis
+				prerequisite = {
+			focus = OTT_Black_Monday_Hits_The_Empire 
+		}
+		icon = GFX_goal_Float_the_Lira
+		x = 28
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+		}
+	}
+	
+				focus = {
+		id = OTT_expand_industries
+				prerequisite = {
+			focus = OTT_Dealing_With_The_Crisis 
+		}
+		icon = GFX_goal_generic_production2
+		x = 30
+		y = 2
+		cost = 05
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+		}
+	}
+	
+					focus = {
+		id = OTT_Forging_A_New_Economy
+				prerequisite = {
+			focus = OTT_Dealing_With_The_Crisis 
+		}
+		icon = GFX_goal_ideology_market_liberal
+		x = 26
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+		}
+	}
+	
+						focus = {
+		id = OTT_Dealing_With_The_OPDA
+				prerequisite = {
+			focus = OTT_Dealing_With_The_Crisis 
+		}
+		icon = GFX_goal_OTT_opda
+		x = 28
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+		}
+	}
+	
+	#### Naval Branch
+	
+			focus = {
+		id = OTT_Competition_With_Egypt
+		icon = GFX_goal_EGY_sultan_fleet
+		x = 69
+		y = 0
+		cost = 8.6
+		ai_will_do = {
+			factor = 100
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		navy_experience = 25
+		}
+	}
+	
+				focus = {
+		id = OTT_1937_Naval_Plan
+		icon = GFX_goal_navy_decision
+		prerequisite = {
+			focus = OTT_Competition_With_Egypt 
+		}
+		x = 74
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = {
+		id = OTT_golcuk_dockyards
+		prerequisite = {
+			focus = OTT_Competition_With_Egypt
+		}
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 64
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 60
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_golcuk_dockyards"
+			hidden_effect = {
+				goto_province = 3851
+			}
+			340 = {
+				add_building_construction = {
+					type = naval_base
+					province = 3851
+					level = 5
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = ott_denbts_large days = 80
+			} #money
+		}
+	}
+	
+					focus = {
+		id = OTT_Buy_Crete
+		icon = GFX_goal_flag_crete
+		prerequisite = {
+			focus = OTT_1937_Naval_Plan 
+		}
+		x = 75
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+				focus = {
+		id = OTT_Expand_Barsa_Port
+		icon = GFX_goal_generic_position_armies
+		prerequisite = {
+			focus = OTT_1937_Naval_Plan 
+		}
+		x = 73
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+					focus = {
+		id = OTT_Lock_The_Suez
+		icon = GFX_goal_EGY_nile_proc
+		prerequisite = {
+			focus = OTT_Expand_Barsa_Port 
+		}
+		x = 75
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+				NOT { 
+				OTT = { has_completed_focus = OTT_Buy_the_Suez }
+				} 
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+						focus = {
+		id = OTT_Buy_the_Suez
+		icon = GFX_goal_constitutional_guarantees
+		prerequisite = {
+			focus = OTT_Buy_Crete 
+		}
+		x = 73
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+								NOT { 
+				OTT = { has_completed_focus = OTT_Lock_The_Suez }
+				} 
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+							focus = {
+		id = OTT_Project_Supremacy
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = {
+			focus = OTT_Competition_With_Egypt 
+		}
+		x = 69
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = {
+		id = OTT_marmara_blacksea
+		prerequisite = {
+			focus = OTT_Project_Supremacy
+		}
+		icon = GFX_goal_generic_build_navy
+		x = 67
+		y = 2
+		cost = 8.6
+		available = {
+			has_completed_focus = OTT_golcuk_dockyards
+		}
+		ai_will_do = {
+			factor = 60
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_marmara_blacksea"
+			773 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9833
+					level = 3
+				}
+			}
+			340 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 11829
+					level = 3
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 3851
+					level = 2
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = ott.82 days = 3
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_mediterranean
+		prerequisite = {
+			focus = OTT_Project_Supremacy
+		}
+		icon = GFX_goal_generic_build_navy
+		x = 69
+		y = 2
+		cost = 8.6
+		available = {
+			controls_state = 553
+		}
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_mediterranean"
+			553 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 792
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 792
+					level = 2
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 792
+					level = 2
+					instant_build = yes
+				}
+			}
+			183 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = ott.83 days = 3
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_gulf_of_basra
+		prerequisite = {
+			focus = OTT_Project_Supremacy
+		}
+		icon = GFX_goal_generic_build_navy
+		x = 71
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			controls_state = 812
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_gulf_of_basra"
+			812 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = 2089
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 2089
+					level = 2
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 2089
+					level = 3
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = ott.84 days = 3
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_cruiser_effort_unq
+		prerequisite = {
+			focus = OTT_golcuk_dockyards
+		}
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 65
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_cruiser_effort_unq"
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_battleship_effort_unq
+		prerequisite = {
+			focus = OTT_cruiser_effort_unq
+		}
+		icon = GFX_goal_generic_navy_battleship
+		x = 65
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_battleship_effort_unq"
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battlecruiser
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_destroyer_effort_unq
+		prerequisite = {
+			focus = OTT_golcuk_dockyards
+		}
+		icon = GFX_goal_generic_navy_cruiser
+		x = 63
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_destroyer_effort_unq"
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_submarine_effort_unq
+		prerequisite = {
+			focus = OTT_destroyer_effort_unq
+		}
+		icon = GFX_goal_generic_navy_submarine
+		x = 63
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_submarine_effort_unq"
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+	}
+	
+	focus = {
+		id = OTT_Advanced_Naval_Designs
+		icon = GFX_goal_battleship
+				prerequisite = {
+			focus = OTT_submarine_effort_unq
+		}
+		prerequisite = {
+			focus = OTT_battleship_effort_unq
+		}
+		x = 64
+		y = 4
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+		
+		}
+	}
+	
+		focus = {
+		id = OTT_Cross_The_Seas
+		icon = GFX_goal_generic_navy_doctrines_tactics
+				prerequisite = 
+			{ focus = OTT_Lock_The_Suez focus = OTT_Buy_the_Suez }
+
+		x = 74
+		y = 4
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+				available = {
+
+		}		
+					bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_Cross_The_Seas"
+			add_tech_bonus = {
+				name = landing_bonus
+				bonus = 0.5
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+	
+	### Airforce Branch 
+	
+	focus = {
+		id = OTT_Expand_Air_Force
+		prerequisite = {
+		}
+		icon = GFX_goal_Turkish_airforce
+		x = 35
+		y = 0
+		cost = 8.6
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_army_aviation_unq"
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_more_airbases
+		prerequisite = {
+			focus = OTT_Expand_Air_Force
+		}
+		icon = GFX_goal_generic_air_doctrine
+		x = 35
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_more_airbases"
+			679 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			354 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			291 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_air_warfare_academy
+		prerequisite = {
+			focus = OTT_more_airbases
+		}
+				prerequisite = {
+			focus = OTT_fighter_focus_unq focus = OTT_bomber_focus_unq
+		}
+		icon = GFX_goal_generic_CAS
+		x = 35
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 50
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_air_warfare_academy"
+			air_experience = 25
+			add_ideas = ott_air_warfare_academy_idea
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_fighter_focus_unq
+		prerequisite = {
+			focus = OTT_Expand_Air_Force
+		}
+		icon = GFX_goal_generic_air_fighter
+		x = 33
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 30
+		}
+		
+			available = {
+			NOT = {
+				OTT = { has_completed_focus = OTT_bomber_focus_unq }
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_fighter_focus_unq"
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_bomber_focus_unq
+		prerequisite = {
+			focus = OTT_Expand_Air_Force
+		}
+		icon = GFX_goal_generic_air_bomber
+		x = 37
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 10
+		}
+		
+				available = {
+			NOT = {
+				OTT = { has_completed_focus = OTT_fighter_focus_unq }
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_bomber_focus_unq"
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_Western_Airbases
+		prerequisite = {
+			focus = OTT_fighter_focus_unq 
+		}
+						prerequisite = {
+		 focus = OTT_more_airbases
+		}
+		icon = GFX_goal_generic_air_production
+		x = 33
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 50
+		}
+
+		completion_reward = {
+							453 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			754 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_Eastern_Air_Bases
+		prerequisite = {
+			focus = OTT_bomber_focus_unq 
+		}
+				prerequisite = {
+		 focus = OTT_more_airbases
+		}
+		icon = GFX_goal_generic_air_production
+		x = 37
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 50
+		}
+
+		completion_reward = {
+							352 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			819 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_german_air_designs
+		prerequisite = {
+			focus = OTT_Western_Airbases focus = OTT_Eastern_Air_Bases
+		}
+				prerequisite = {
+			focus = OTT_air_warfare_academy 
+		}
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 35
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 80
+		}
+		available = {
+			country_exists = GER
+			NOT = {
+				has_country_flag = ott_german_embargo
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_german_air_designs"
+			GER = {
+				country_event = {
+					id = ott.79 days = 3
+				}
+			}
+			custom_effect_tooltip = OTT_german_approval_tt
+		}
+	}
+	
+	#### ARMY BRANCH
+	
+		focus = {
+		id = OTT_ottoman_army
+		icon = GFX_goal_OTT_army
+		x = 50
+		y = 0
+		cost = 8.6
+		ai_will_do = {
+			factor = 900
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_ottoman_army"
+			add_war_support = 0.07
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			country_event = { id = ott.186 }
+		}
+	}
+	
+	#### Pasha Branch 
+
+		focus = {
+		id = OTT_Fahreddin_Turkan_Pasha 
+				prerequisite = {
+			focus = OTT_Power_Pasha 
+		}
+		icon = GFX_goal_omer_ferhettin
+		x = 42
+		y = 7
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+
+						available = {
+			OTT = { has_country_flag = OTT_Turkan_Pasha }
+		}
+		completion_reward = {
+			remove_ideas = OTT_Pashas_Divided
+				add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_desert_forces
+		prerequisite = {
+			focus = OTT_Fahreddin_Turkan_Pasha
+		}
+		icon = GFX_goal_OTT_camels
+		x = 52
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_desert_forces"
+			custom_effect_tooltip = OTT_desert_tt
+			hidden_effect = {
+				load_oob = OTT_camels
+				set_technology = {
+					camel_corpse = 1
+				}
+			}
+			custom_effect_tooltip = OTT_camel_corpse_effect
+		}
+	}
+	
+		focus = {
+		id = OTT_South_Sinai_Port
+		prerequisite = {
+			focus = OTT_desert_forces
+		}
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 52
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_South_Sinai_Port"
+			hidden_effect = {
+				goto_province = 10099
+			}
+			453 = {
+				add_building_construction = {
+					type = naval_base
+					province = 10099
+					level = 5
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = ott_denbts_large days = 80
+			} #money
+		}
+	}
+	
+		focus = {
+		id = OTT_Mustafa_Kemal_Pasha
+				prerequisite = {
+			focus = OTT_Power_Pasha 
+		}
+		icon = GFX_goal_mustafa_kemal
+		x = 54
+		y = 7
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+
+								available = {
+			OTT = { has_country_flag = OTT_Kemal_Pasha }
+		}
+		
+		completion_reward = {
+		remove_ideas = OTT_Pashas_Divided
+					add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}		
+		}
+	}
+	
+					focus = {
+		id = OTT_Fortify_Borders
+				prerequisite = {
+			focus = OTT_Mustafa_Kemal_Pasha 
+		}
+		icon = GFX_goal_generic_fortify_city
+		x = 54
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+					812 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2089
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = 5095
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = 78
+					instant_build = yes
+				}
+
+			}
+			819 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 6826
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = 5014
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = 10793
+					instant_build = yes
+				}
+			}
+						291 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 12855
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	
+			focus = {
+		id = OTT_Support_Iranian_Kurds
+				prerequisite = {
+			focus = OTT_Fortify_Borders 
+		}
+		icon = GFX_goal_generic_dangerous_deal
+		x = 54
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 400
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+		focus = {
+		id = OTT_Fevzi_Cakmak_Pasha 
+				prerequisite = {
+			focus = OTT_Power_Pasha 
+		}
+		icon = GFX_goal_Fevzi_cakmak
+		x = 56
+		y = 7
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+
+								available = {
+			OTT = { has_country_flag = OTT_Cakmak_Pasha }
+		}
+		
+		completion_reward = {
+		remove_ideas = OTT_Pashas_Divided
+					add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}		
+		}
+	}
+	
+			focus = {
+		id = OTT_Establish_Artillery_Corps ### make it like camel troops
+				prerequisite = {
+			focus = OTT_Fevzi_Cakmak_Pasha 
+		}
+		icon = GFX_goal_generic_army_artillery2
+		x = 56
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+				focus = {
+		id = OTT_Expand_Arms_research
+				prerequisite = {
+			focus = OTT_Establish_Artillery_Corps 
+		}
+		icon = GFX_goal_generic_scientific_exchange
+		x = 56
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+			focus = {
+		id = OTT_Osman_Fuad_Pasha
+				prerequisite = {
+			focus = OTT_Power_Pasha 
+		}
+		icon = GFX_goal_Osman_Faud
+		x = 58
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 400
+		}
+
+								available = {
+			OTT = { has_country_flag = OTT_Fuad_Pasha }
+		}
+		
+		completion_reward = {
+		remove_ideas = OTT_Pashas_Divided
+					add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+				focus = {
+		id = OTT_Expand_The_Teskilati_Mahsusa
+				prerequisite = {
+			focus = OTT_Osman_Fuad_Pasha 
+		}
+		icon = GFX_goal_WIP
+		x = 58
+		y = 7
+		cost = 5
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+		focus = {
+		id = OTT_gendarmerie
+		prerequisite = {
+			focus = OTT_Expand_The_Teskilati_Mahsusa
+		}
+		icon = GFX_goal_OTT_gendarmerie
+		x = 58
+		y = 7
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_gendarmerie"
+			custom_effect_tooltip = OTT_gendarmerie_tt
+			add_ideas = ott_gendarmerie_idea
+		}
+	}
+	
+	#### Arsenal Branch 		
+		focus = {
+		id = OTT_Expand_Arsenals
+				prerequisite = {
+			focus = OTT_ottoman_army 
+		}
+		icon = GFX_goal_Generic_Bring_The_Big_Guns
+		x = 53
+		y = 1
+		cost = 8.6
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+			773 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	
+			focus = {
+		id = OTT_Expand_Arms_Prouction
+				prerequisite = {
+			focus = OTT_Expand_Arsenals 
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 55
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+			343 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+							49 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+
+		}
+	}
+	
+				focus = {
+		id = OTT_Middle_east_factories
+				prerequisite = {
+			focus = OTT_Expand_Arms_Prouction 
+		}
+				prerequisite = {
+			focus = OTT_Strengthen_Railway_Defense 
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 55
+		y = 4
+		cost = 8.6
+		ai_will_do = {
+			factor = 150
+		}
+
+		completion_reward = {
+			677 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				}
+				291 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+		focus = {
+		id = OTT_Armored_Trains
+				prerequisite = {
+			focus = OTT_Middle_east_factories 
+		}
+				prerequisite = {
+			focus = OTT_Strengthen_Railway_Defense 
+		}
+					prerequisite = {
+			focus = OTT_Fortify_Islands 
+		}		
+		icon = GFX_goal_Armored_Train
+		x = 53
+		y = 5
+		cost = 8.6
+		ai_will_do = {
+			factor = 200
+		}
+
+		completion_reward = {
+
+		}
+	}
+	
+				focus = {
+		id = OTT_Strengthen_Railway_Defense
+				prerequisite = {
+			focus = OTT_Expand_Arms_Prouction focus = OTT_Expand_Island_Dockyards
+		}
+		icon = G
+		icon = GFX_goal_generic_construct_military
+		x = 53
+		y = 3
+		cost = 8.6
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+					554 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4111
+					instant_build = yes
+				}
+
+			}
+			754 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 10835
+					instant_build = yes
+				}
+			}
+			
+						679 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 5037
+					instant_build = yes
+				}
+			}
+			
+						676 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				
+				}
+			453 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				}
+				754 = {
+					add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				}
+
+		}
+	}
+	
+				focus = {
+		id = OTT_Expand_Island_Dockyards
+				prerequisite = {
+			focus = OTT_Expand_Arsenals 
+		}
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 51
+		y = 2
+		cost = 8.6
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			187 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				
+				}
+				add_extra_state_shared_building_slots = 1				
+				164 = {
+					add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			183 = {
+				add_extra_state_shared_building_slots = 2		
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					
+					}
+				
+				}
+
+		
+				}
+
+		}
+	}
+	
+						focus = {
+		id = OTT_Fortify_Islands
+				prerequisite = {
+			focus = OTT_Expand_Island_Dockyards 
+		}
+				prerequisite = {
+			focus = OTT_Strengthen_Railway_Defense 
+		}		
+		icon = GFX_focus_generic_coastal_fort
+		x = 51
+		y = 4
+		cost = 8.6
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			183 = {	
+				add_building_construction = {
+					type = coastal_bunker
+					province = 11984
+					level = 2
+					instant_build = yes
+				}
+				
+				}
+				
+			164 = {	
+				add_building_construction = {
+					type = coastal_bunker
+					province = 10007
+					level = 2
+					instant_build = yes
+				}
+				if = {
+	limit = { OTT = { controls_state = 182 }
+					}
+							182 = {	
+				add_building_construction = {
+					type = coastal_bunker
+					province = 9940
+					level = 2
+					instant_build = yes
+				}
+				
+				}
+				
+		 }
+		}
+	}
+	
+}
+
+### Conscription Branch 
+
+						focus = {
+		id = OTT_Intiate_War_Drafting
+				prerequisite = {
+			focus = OTT_ottoman_army
+		}
+		icon = GFX_focus_generic_little_entente
+		x = 47
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Started
+				has_country_flag = OTT_Cairo_war_began
+			}
+		}
+		completion_reward = {
+		add_war_support = 0.1
+		add_stability = -0.05
+		add_political_power = 25
+		country_event = { days = 0 id = ott.187 }
+	}
+	
+}
+
+						focus = {
+		id = OTT_An_Organized_Army
+				prerequisite = {
+			focus = OTT_Intiate_War_Drafting
+		}
+		icon = GFX_focus_generic_military_mission
+		x = 45
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_organized_force
+				has_country_flag = OTT_Organized_Army
+			}
+		}
+		completion_reward = {
+
+	}
+	
+}
+
+						focus = {
+		id = OTT_Conscription_of_Millets
+				prerequisite = {
+			focus = OTT_Intiate_War_Drafting
+		}
+		icon = GFX_goal_demand_sudetenland
+		x = 49
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OTT_Millet_force
+				has_country_flag = OTT_Millet_Army
+			}
+		}
+		completion_reward = {
+
+	}
+	
+}
+
+						focus = {
+		id = OTT_For_The_Sultan
+		prerequisite = { focus = OTT_An_Organized_Army focus = OTT_Conscription_of_Millets }
+		icon = GFX_goal_OTT_ferman
+		x = 47
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+
+		}
+		completion_reward = {
+
+	}
+	
+}
+
+						focus = {
+		id = OTT_Stregthen_Officer_Corps
+				prerequisite = {
+			focus = OTT_An_Organized_Army
+		}
+				prerequisite = {
+			focus = OTT_For_The_Sultan
+		}
+		icon = GFX_goal_OTT_gendarmerie
+		x = 45
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+
+		}
+		completion_reward = {
+
+	}
+	
+}
+
+						focus = {
+		id = OTT_Further_Vilayet_Conscriptions
+				prerequisite = {
+			focus = OTT_Conscription_of_Millets
+		}
+				prerequisite = {
+			focus = OTT_For_The_Sultan
+		}
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		x = 49
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+
+		}
+		completion_reward = {
+
+	}
+	
+	}
+	
+	focus = {
+		id = OTT_A_Unfied_Army
+				prerequisite = {
+			focus = OTT_Stregthen_Officer_Corps
+		}
+				prerequisite = {
+			focus = OTT_For_The_Sultan
+		}
+				prerequisite = {
+			focus = OTT_Further_Vilayet_Conscriptions
+		}
+		icon = GFX_goal_generic_national_unity
+		x = 47
+		y = 5
+		cost = 5
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+				custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+		}
+		completion_reward = {
+
+	}
+	
+}
+
+##### foreign branch
+
+	focus = {
+		id = OTT_The_Empire_Triamphant 
+		icon = GFX_goal_New_Ottoman
+		x = 35
+		y = 7
+		cost = 2
+		ai_will_do = {
+			factor = 500
+		}
+		
+		available = {
+					custom_trigger_tooltip = {
+				tooltip = OTT_Cairo_War_Over
+				has_country_flag = Cairo_Pact_Dealt_With
+			}
+			}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_The_Empire_Triamphant"
+			add_stability = 0.1
+			add_political_power = 100
+		}
+	}
+	
+		focus = {
+		id = OTT_Ottoman_Caliph
+		icon = GFX_goal_OTT_caliph
+						prerequisite = {
+			focus = OTT_The_Empire_Triamphant 
+		}
+		x = 40
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		
+				available = {
+			OTT = { has_completed_focus = OTT_The_Investigation } 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_Ottoman_Caliph"
+						reverse_add_opinion_modifier = {
+				target = ALB modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = LYB modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = AZB modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = ALO modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = AFG modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = PRF modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = TUA modifier = ott_r_caliph
+			}
+						reverse_add_opinion_modifier = {
+				target = MLY modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = INS modifier = ott_r_caliph
+			}
+			reverse_add_opinion_modifier = {
+				target = SUD modifier = ott_r_caliph
+			}
+			add_opinion_modifier = {
+				target = ALB modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = LYB modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = AZB modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = ALO modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = AFG modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = PRF modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = TUA modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = MLY modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = INS modifier = ott_rr_caliph
+			}
+			add_opinion_modifier = {
+				target = SUD modifier = ott_rr_caliph
+			}
+		}
+	}
+	
+		focus = {
+		id = OTT_Foreign_Policy 
+		icon = GFX_focus_generic_diplomatic_treaty
+			prerequisite = {
+			focus = OTT_The_Empire_Triamphant 
+		}
+		x = 30
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 400
+		}
+		
+				available = {
+				OTT = { has_completed_focus = OTT_The_Investigation } 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus OTT_Foreign_Policy"
+			
+			add_political_power = 100
+		}
+	}
